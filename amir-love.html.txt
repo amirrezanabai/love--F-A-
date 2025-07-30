@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحه‌ی عاشقانه امیررضا</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(135deg, #fff1f7, #ffe3ec);
+      color: #b8004b;
+      overflow: hidden;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 80px;
+      text-shadow: 2px 2px #ffc8dd;
+    }
+
+    .heart {
+      font-size: 5em;
+      animation: heartbeat 1.5s infinite;
+      margin: 15px 0;
+    }
+
+    .message {
+      font-size: 1.3em;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .heartsRain {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heartDrop {
+      position: absolute;
+      top: -50px;
+      animation: fall 14s linear infinite;
+      font-size: 2em;
+      color: #ff6188;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    #special-anniversary-message {
+      font-size: 1.8em;
+      color: #c72f5f;
+      background: #fff7fb;
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 30px;
+      display: none;
+      box-shadow: 0 5px 15px rgba(255, 154, 178, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>آره اون بیبی منه... همیشه مال منه 💕</h1>
+  <div class="heart">❤️</div>
+  <div class="message">با تو روزامون قشنگ‌تر می‌گذره...</div>
+
+  <!-- بارش قلب عاشقانه -->
+  <div class="heartsRain">
+    <div class="heartDrop" style="left: 5%;">💘</div>
+    <div class="heartDrop" style="left: 20%;">💖</div>
+    <div class="heartDrop" style="left: 35%;">❤️</div>
+    <div class="heartDrop" style="left: 50%;">💕</div>
+    <div class="heartDrop" style="left: 65%;">💓</div>
+    <div class="heartDrop" style="left: 80%;">💗</div>
+    <div class="heartDrop" style="left: 95%;">💞</div>
+  </div>
+
+  <!-- پیام سالگرد -->
+  <div id="special-anniversary-message">🎉 امروز سالگردمون رسید—دوستت دارم بیشتر از همیشه! 🌹</div>
+<!-- موزیک عاشقانه‌ای که در روز خاص پخش می‌شه -->
+<audio id="love-audio" preload="auto">
+  <source src="https://example.com/music/are-oon-baby-mane.mp3" type="audio/mpeg">
+  <!-- لطفاً لینک واقعی موزیک رو جایگزین کن -->
+</audio>
+
+<script>
+  // تاریخ سالگرد به میلادی - 13 آگوست 2025
+  const anniversaryDate = new Date('2025-08-13');
+  const today = new Date();
+
+  const isAnniversary =
+    today.getDate() === anniversaryDate.getDate() &&
+    today.getMonth() === anniversaryDate.getMonth() &&
+    today.getFullYear() === anniversaryDate.getFullYear();
+
+  window.onload = () => {
+    if (isAnniversary) {
+      document.getElementById('special-anniversary-message').style.display = 'block';
+      document.getElementById('love-audio').play();
+    }
+  };
+</script>
+</body>
+</html>
